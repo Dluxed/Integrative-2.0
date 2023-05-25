@@ -1,0 +1,22 @@
+{
+  "name": "sergiowantssomechock",
+  "version": "1.0.0",
+  "description": "El repositorio de integrador",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dluxed/SergioWantsSomeChock.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dluxed/SergioWantsSomeChock/issues"
+  },
+  "homepage": "https://github.com/Dluxed/SergioWantsSomeChock#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
