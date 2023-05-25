@@ -1,5 +1,5 @@
 {
-  "name": "sergiowantssomechock",
+  "name": "integrative-2.0",
   "version": "1.0.0",
   "description": "El repositorio de integrador",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dluxed/SergioWantsSomeChock.git"
+    "url": "git+https://github.com/Dluxed/Integrative-2.0.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Dluxed/SergioWantsSomeChock/issues"
+    "url": "https://github.com/Dluxed/Integrative-2.0/issues"
   },
-  "homepage": "https://github.com/Dluxed/SergioWantsSomeChock#readme",
+  "homepage": "https://github.com/Dluxed/Integrative-2.0#readme",
   "dependencies": {
     "express": "^4.18.2",
     "nodemon": "^2.0.22"
