@@ -1,2 +1,2 @@
-# SergioWantsSomeChock
+# HashiFinder
 El repositorio de integrador
