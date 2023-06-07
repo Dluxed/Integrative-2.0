@@ -14,6 +14,14 @@ app.get('/hi', (req, res) => {
   res.sendFile(path.join(__dirname + '/src/templates/hola.html'))
 })
 
+app.get('/log', (req, res) => {
+  res.sendFile(path.join(__dirname + '/src/templates/login.html'))
+})
+
+app.get('/reg', (req, res) => {
+  res.sendFile(path.join(__dirname + '/src/templates/register.html'))
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
