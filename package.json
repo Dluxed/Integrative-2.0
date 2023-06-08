@@ -2,9 +2,11 @@
   "name": "integrative-2.0",
   "version": "1.0.0",
   "description": "El repositorio de integrador",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css": "npx tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css --watch",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +19,14 @@
   },
   "homepage": "https://github.com/Dluxed/Integrative-2.0#readme",
   "dependencies": {
+    "autoprefixer": "^10.4.14",
     "express": "^4.18.2",
-    "nodemon": "^2.0.22"
+    "mongoose": "^7.2.2",
+    "nodemon": "^2.0.22",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
   }
 }
