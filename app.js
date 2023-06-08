@@ -29,6 +29,9 @@ app.get('/reg', (req, res) => {
   res.sendFile(path.join(__dirname + '/src/templates/register.html'))
 })
 
+app.get('/find', (req, res) => {
+  res.sendFile(path.join(__dirname + '/src/templates/SoliBusca.html'))
+})
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
