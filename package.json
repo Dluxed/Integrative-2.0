@@ -20,6 +20,7 @@
   "homepage": "https://github.com/Dluxed/Integrative-2.0#readme",
   "dependencies": {
     "autoprefixer": "^10.4.14",
+    "dotenv": "^16.1.4",
     "express": "^4.18.2",
     "mongoose": "^7.2.2",
     "nodemon": "^2.0.22",
