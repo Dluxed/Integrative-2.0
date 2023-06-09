@@ -22,11 +22,11 @@ app.get('/log', (req, res) => {
 })
 
 app.get('/reg', (req, res) => {
-  res.render('reguster.ejs')
+  res.render('register.ejs')
 })
 
 app.get('/find', (req, res) => {
-  res.sendFile(path.join(__dirname + '/src/templates/SoliBusca.html'))
+  res.render(path.join(__dirname + '/src/templates/SoliBusca.ejs'))
 })
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
