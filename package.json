@@ -1,34 +1,36 @@
-{
-  "name": "integrative-2.0",
-  "version": "1.0.0",
-  "description": "El repositorio de integrador",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "css": "npx tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css --watch",
-    "start": "node app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Dluxed/Integrative-2.0.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Dluxed/Integrative-2.0/issues"
-  },
-  "homepage": "https://github.com/Dluxed/Integrative-2.0#readme",
-  "dependencies": {
-    "autoprefixer": "^10.4.14",
-    "dotenv": "^16.1.4",
-    "ejs-mate": "^4.0.0",
-    "express": "^4.18.2",
-    "mongoose": "^7.2.2",
-    "nodemon": "^2.0.22",
-    "postcss": "^8.4.24",
-    "postcss-cli": "^10.1.0"
-  },
-  "devDependencies": {
-    "tailwindcss": "^3.3.2"
+
+  {
+    "name": "integrative-2.0",
+    "version": "1.0.0",
+    "description": "El repositorio de integrador",
+    "main": "app.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "css": "npx tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css --watch",
+      "start": "node app.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Dluxed/Integrative-2.0.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/Dluxed/Integrative-2.0/issues"
+    },
+    "homepage": "https://github.com/Dluxed/Integrative-2.0#readme",
+    "dependencies": {
+      "autoprefixer": "^10.4.14",
+      "dotenv": "^16.1.4",
+      "ejs-mate": "^4.0.0",
+      "express": "^4.18.2",
+      "mongoose": "^7.2.2",
+      "nodemon": "^2.0.22",
+      "postcss": "^8.4.24",
+      "postcss-cli": "^10.1.0"
+    },
+    "devDependencies": {
+      "tailwindcss": "^3.3.2"
+    }
   }
-}
+
