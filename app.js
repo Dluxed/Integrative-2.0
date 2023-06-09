@@ -17,16 +17,12 @@ app.get('/', (req, res) => {
   res.render('home.ejs')
 })
 
-app.get('/hi', (req, res) => {
-  res.sendFile(path.join(__dirname + '/src/templates/hola.html'))
-})
-
 app.get('/log', (req, res) => {
-  res.sendFile(path.join(__dirname + '/src/templates/login.html'))
+  res.render('login.ejs')
 })
 
 app.get('/reg', (req, res) => {
-  res.sendFile(path.join(__dirname + '/src/templates/register.html'))
+  res.render('reguster.ejs')
 })
 
 app.get('/find', (req, res) => {
