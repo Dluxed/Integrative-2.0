@@ -36,6 +36,11 @@ app.get('/reg', (req, res) => {
   res.render('register.ejs')
 })
 
+app.post('/regPost', (req, res) => {
+  console.log(req.body);
+
+})
+
 app.get('/request', (req, res) => {
   res.render(path.join(__dirname + '/src/templates/SoliBusca.ejs'))
 })
