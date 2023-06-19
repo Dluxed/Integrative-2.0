@@ -851,6 +851,18 @@ video {
   height: 100vh;
 }
 
+.h-full {
+  height: 100%;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.h-2\/3 {
+  height: 66.666667%;
+}
+
 .w-40 {
   width: 10rem;
 }
@@ -2470,6 +2482,10 @@ video {
   outline-offset: 2px;
 }
 
+.\!outline {
+  outline-style: solid !important;
+}
+
 .outline {
   outline-style: solid;
 }
@@ -2765,6 +2781,10 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:h-full {
+    height: 100%;
+  }
+
   .md\:w-2\/3 {
     width: 66.666667%;
   }

@@ -12,11 +12,11 @@ app.engine('ejs', engine);
 app.set('views', __dirname + '/src/templates');
 
 //Archivos estaticos
-app.use(express.static(path.join(__dirname, 'src')));
+app.use(express.static(__dirname));
 
 //Desmadre de POST
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 
 //-----------   Redirecciones del servidor  -------------------
 app.get('/', (req, res) => {
@@ -53,4 +53,5 @@ app.get('/find', (req, res) => {
 //Comprobacion del estado del servidor local
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
+
 })
