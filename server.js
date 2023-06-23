@@ -6,7 +6,13 @@ const url = process.env.URI_MONGO
 const client = new MongoClient(url);
 const dbName = "DrStone";
 
-async function connect(){
+
+//connect();
+
+//select();
+
+
+const connect = async () => {
     try {
         await mongoose.connect(url)
         console.log("Ahueso tenemos coneccion (☞ﾟヮﾟ)☞")
@@ -17,14 +23,14 @@ async function connect(){
     }
 }
 
+exports.connect = connect;
 
-
-connect();
-
+//insersion de datos
 async function insert(){
     try {
         await client.connect();
         const db = client.db(dbName);
+
         const col = db.collection("Personajes");
 
         let suika = {
@@ -44,13 +50,19 @@ async function insert(){
 }
 //insert();
 
-async function select(){
-    await client.connect();   
+async function execute(){
+    await client.connect();  
+
     const db = client.db(dbName);
-    const col = db.collection("Personajes");
-    const myDoc = await col.findOne();
     
-    console.log(myDoc);
+    //const col = db.collection("Personajes");
+    //const myDoc = await col.findOne();
+    
+    //console.log(myDoc);
 }
 
-select();
+
+
+
+
+client.close();
