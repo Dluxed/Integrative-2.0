@@ -4,7 +4,7 @@ const app = express(); //creando obj
 const port = 3000;
 const path = require("path");
 const morgan = require('morgan');
-const connection = require('./server.js');
+//const connection = require('./server.js');
 
 //Modulacion de vistas ejs
 const engine = require('ejs-mate');
@@ -31,4 +31,4 @@ app.listen(port, () => {
 
 })
 
-connection.connect();
+//connection.connect();

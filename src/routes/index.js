@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
   });
   
   router.get('/request', (req, res) => {
-    res.render(path.join(__dirname + '/src/templates/SoliBusca.ejs'));
+    res.render(path.join(__dirname + '/src/templates/request.ejs'));
   });
   
   router.get('/find', (req, res) => {
