@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     res.render('login.ejs');
   });
   
-  router.post('/logPost', (req, res) => {
+  router.post('/log', (req, res) => {
     console.log(req.body);
     console.log(req.body['usr']);
     res.send('recieved');
@@ -20,8 +20,9 @@ router.get('/', (req, res) => {
     res.render('register.ejs');
   });
   
-  router.post('/regPost', (req, res) => {
+  router.post('/reg', (req, res) => {
     console.log(req.body);
+    res.send('recieved');
   
   });
   
