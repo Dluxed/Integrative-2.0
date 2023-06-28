@@ -1,10 +1,15 @@
 //requerimos el modulo de express
 const express = require('express'); 
-const app = express(); //creando obj
-const port = 3000;
 const path = require("path");
 const morgan = require('morgan');
-const connection = require('./dbconnection.js');
+const passport = require('passport');
+const session = require('express-session');
+
+// Initializations
+const app = express(); 
+require('./dbconnection.js');
+const port = 3000;
+require('./src/passport/local-auth.js');
 
 //Modulacion de vistas ejs
 const engine = require('ejs-mate');
@@ -20,7 +25,13 @@ app.use(morgan('dev'));  //muestra datos de las peticiones del servidor
 //Desmadre de POST
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
+app.use(session({
+  secret: 'SuicideZanero',
+  resave: false,
+  saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 //-------------   ROUTES   ---------------------
 app.use('/', require('./src/routes/index.js'));
@@ -31,4 +42,4 @@ app.listen(port, () => {
 
 })
 
-connection.connect();
+//connection.connect();

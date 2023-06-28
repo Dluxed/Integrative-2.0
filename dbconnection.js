@@ -23,6 +23,8 @@ const connect = async () => {
     }
 }
 
+connect();
+
 exports.connect = connect;
 
 //insersion de datos

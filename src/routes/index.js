@@ -1,5 +1,6 @@
 const express = require('express');
 const router  = express.Router();
+const passport = require('passport');
 
 //-----------   Redirecciones del servidor  -------------------
 router.get('/', (req, res) => {
@@ -20,11 +21,11 @@ router.get('/', (req, res) => {
     res.render('register.ejs');
   });
   
-  router.post('/reg', (req, res) => {
-    console.log(req.body);
-    res.send('recieved');
-  
-  });
+  router.post('/reg', passport.authenticate('local-signup', {
+    successRedirect: '/',
+    failureRedirect: '/reg',
+    passReqToCallback: true
+  }));
   
   router.get('/request', (req, res) => {
     res.render(path.join(__dirname + '/src/templates/SoliBusca.ejs'));
