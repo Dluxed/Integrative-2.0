@@ -1,9 +1,8 @@
 //Este archivo valida los datos antes de guardarlos en la BD
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-const { Schema }  = mongoose;
 
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
    email: String,
    password: String 
 });

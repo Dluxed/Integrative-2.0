@@ -1,5 +1,5 @@
-const passport = require("passport");
-const LocalStrategy = require("passport-local").Strategy;
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
 const User = require('../models/user');
 
 passport.serializeUser((user, done) => {
@@ -13,12 +13,17 @@ passport.deserializeUser(async (id, done) => {
 
 passport.use('local-signup', new LocalStrategy({
     usernameField: 'email',
-    passwordField: 'pwd',
+    passwordField: 'password',
     passReqToCallback: true
-}, async (req, email, pwd, done) => {
-    const user = new User();
-    user.email = email;
-    user.password = pwd;
+}, async (req, email, password, done) => {
+    console.log("Email: " + email + " pwd: " + password);
+    const user = new User({
+        email: email,
+        password: password
+     });
+    console.log(user);
+    //user.markModified('email');
+    //user.markModified('password');
     await user.save();
     done(null, user); 
 }));

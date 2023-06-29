@@ -27,7 +27,7 @@ connect();
 
 exports.connect = connect;
 
-//insersion de datos
+/*/insersion de datos
 async function insert(){
     try {
         await client.connect();
@@ -64,7 +64,5 @@ async function execute(){
 }
 
 
+*/
 
-
-
-client.close();
