@@ -5,15 +5,12 @@
             <a href="">Reports</a>
             <a href="">Adopt</a>        
         <div>
-            <button class="">
-                <a href="/reg">
-                    Register
-                </a>
-            </button>
-            <button class="hover:bg-white hover:text-black">
-                <a href="/log">
-                    Log In
-                </a>
-            </button>
+            <% if(user) {%>
+                <a href="#">Profile</a>
+                <a href="/logout">Logout</a>
+            <% } else {%>
+                <a href="/reg">Register</a>
+                <a href="/log"> Log In </a>
+             <% } %>
         </div>
     </nav>

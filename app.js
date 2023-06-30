@@ -40,6 +40,7 @@ app.use(passport.session());
 app.use((req, res, next) => { //Mensajs de error
   app.locals.signupMessage = req.flash('signupMessage');
   app.locals.signinMessage = req.flash('signinMessage');
+  app.locals.user = req.user;
   next();
 });
 

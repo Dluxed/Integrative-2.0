@@ -7,7 +7,7 @@
 
         <section class=" flex justify-center h-fit mt-auto mb-auto bg-white rounded-lg drop-shadow-2xl p-8 w-fit">
             <div class="flex-col ">
-                <form name="loginForm" action="/log" onsubmit="return validate()" method="post" class="space-y-6">
+                <form name="loginForm" action="/log" method="post" class="space-y-6">
                     <a href="/" class="ntext-blue-700 hover:underline dark:text-blue-500">Home</a>
                     <h2 class="text-2xl w-fit">Log In</h2>
                     <div>
@@ -24,7 +24,7 @@
                             placeholder="Password">
                     </div>
 
-                    <% if(signinMessage) { %> 
+                    <% if(signinMessage.lenght > 0) { %> 
                         <div> <%= signinMessage %> </div>
                     <% } %>
                     <button type="submit"

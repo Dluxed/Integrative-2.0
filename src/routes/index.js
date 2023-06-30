@@ -26,13 +26,28 @@ router.get('/', (req, res) => {
     failureRedirect: '/reg',
     passReqToCallback: true
   }));
+
+  router.get('/logout', (req, res, next) => {
+    req.logout(function (err){
+      if(err) { return next(err); }
+      res.redirect('/');
+    });
+    
+  });
   
-  router.get('/request', (req, res) => {
+  router.get('/request', isAuthenticated, (req, res) => {
     res.render(path.join(__dirname + '/src/templates/SoliBusca.ejs'));
   });
   
-  router.get('/find', (req, res) => {
+  router.get('/find', isAuthenticated, (req, res) => {
     res.render('map.ejs');
   });
   
+  function isAuthenticated (req, res, next) {
+    if(req.isAuthenticated()){
+      return next();
+    } 
+    res.redirect('/log');
+  }
+
   module.exports = router;
