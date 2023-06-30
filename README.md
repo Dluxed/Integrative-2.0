@@ -1,2 +1,2 @@
-# HashiFinder
+# PawSeekers
 El repositorio de integrador
