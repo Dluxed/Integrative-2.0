@@ -25,7 +25,7 @@ router.get('/', (req, res) => {
     successRedirect: '/',
     failureRedirect: '/reg',
     passReqToCallback: true
-  }));
+  }) );
 
   router.get('/logout', (req, res, next) => {
     req.logout(function (err){
@@ -36,7 +36,7 @@ router.get('/', (req, res) => {
   });
   
   router.get('/request', isAuthenticated, (req, res) => {
-    res.render(path.join(__dirname + '/src/templates/SoliBusca.ejs'));
+    res.render('SoliBusca.ejs');
   });
   
   router.get('/find', isAuthenticated, (req, res) => {

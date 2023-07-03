@@ -18,7 +18,7 @@ passport.use('local-signup', new LocalStrategy({  //Estrategia de validdacion de
     passReqToCallback: true //No se que hace imagino que sin esta no jala la siguiente funcion
 }, async (req, email, password, done) => { 
     
-    const user = User.findOne({ email: email}); 
+    const user = await User.findOne({ email: email}); 
     if(user){
         return done(null, false, req.flash('signupMessage', 'The Email is already Taken.')) //Mensaje de error si el usuario ya existe
     } else { 
