@@ -1,5 +1,6 @@
 const express = require('express');
 const router  = express.Router();
+const passport = require('passport');
 
 //-----------   Redirecciones del servidor  -------------------
 router.get('/', (req, res) => {
@@ -10,27 +11,43 @@ router.get('/', (req, res) => {
     res.render('login.ejs');
   });
   
-  router.post('/logPost', (req, res) => {
-    console.log(req.body);
-    console.log(req.body['usr']);
-    res.send('recieved');
-  });
+  router.post('/log', passport.authenticate('local-signin', { //Describe el metodo de autenticacion en caso de recibir una solicitud post
+    successRedirect: '/',
+    failureRedirect: '/log',
+    passReqToCallback: true  //Sin esto no jala, no mover Xd
+  }));
   
   router.get('/reg', (req, res) => {
     res.render('register.ejs');
   });
   
-  router.post('/regPost', (req, res) => {
-    console.log(req.body);
-  
+  router.post('/reg', passport.authenticate('local-signup', {
+    successRedirect: '/',
+    failureRedirect: '/reg',
+    passReqToCallback: true
+  }));
+
+  router.get('/logout', (req, res, next) => {
+    req.logout(function (err){
+      if(err) { return next(err); }
+      res.redirect('/');
+    });
+    
   });
   
   router.get('/request', (req, res) => {
-    res.render(path.join(__dirname + '/src/templates/request.ejs'));
+    res.render('request.ejs'));
   });
   
-  router.get('/find', (req, res) => {
+  router.get('/find', isAuthenticated, (req, res) => {
     res.render('map.ejs');
   });
   
+  function isAuthenticated (req, res, next) {
+    if(req.isAuthenticated()){
+      return next();
+    } 
+    res.redirect('/log');
+  }
+
   module.exports = router;
