@@ -2,16 +2,7 @@
 const express = require('express'); 
 const path = require("path");
 const morgan = require('morgan');
-const passport = require('passport');
-const session = require('express-session');
-const flash = require('connect-flash');
-
-
-// Initializations
-const app = express(); 
-require('./dbconnection.js');
-const port = 3000;
-require('./src/passport/local-auth.js'); //Sin esto no jala la validacion, creo que es para activar el intercambio de sesiones en todas las paginas, igual que passport
+const connection = require('./server.js');
 
 //Modulacion de vistas ejs
 const engine = require('ejs-mate');

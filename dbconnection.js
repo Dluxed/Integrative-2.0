@@ -37,7 +37,7 @@ async function insert(){
 
         let suika = {
             "name" : "Chrome",
-            "sexo": "hombre"
+            "sexo": "Windows"
         }
 
         const p = await col.insertOne(suika);
