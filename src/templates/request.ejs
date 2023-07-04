@@ -1,48 +1,47 @@
 <% layout('layout') %>
- 
-<%- include('navbar') %>
 
-<section class="min-h-screen flex justify-center">
-  
-  <form action="/aqui es la redireccion aun no hecha" method="post" class="h-fit mt-auto mb-auto">
-    
-    <div class="flex flex-col bg-orange-300 rounded-lg drop-shadow-2xl px-2 py-2 ">
-        <a>
+  <%- include('navbar') %>
+
+    <section class="min-h-screen flex justify-center"
+      style="background-image: url('./src/images/jf-brou-915UJQaxtrk-unsplash.jpg'); background-size: cover;">
+
+      <form action="/request" method="post" class="h-fit mt-auto mb-auto flex flex-col bg-slate-100 rounded-lg drop-shadow-2xl p-2 space-y-1">
+
+
+          <h1 class="text-2xl">Reporta tu mascota</h1>
+
           <label for="namePet">Nombre de la mascota:</label><br>
           <input type="text" id="namePet" name="pet_name" placeholder="Timmy">
-        </a>
-  
-        <a>
+
+
           <label for="charaPet">Caracteristicas del animal:</label>
           <input type="text" id="charaPet" name="pet_chara" placeholder="Perro blanco de 2 metros">
-        </a>
-  
-        <a>
+
+
           <label for="signalsPet">Señas particulares:</label>
           <input type="text" id="signalsPet" name="pet_signals" placeholder="Tiene un dedo extra en la pata superior derecha">
-        </a>
-  
-        <a>
-            <label for="trackPet">Ultima localizacion conocida:</label>
-            <input type="text" id="trackPet" name="pet_track" placeholder="Col. Juarez, en la esquna de Chesse Pizza y Salida Cuahutemoc">
-        </a>
-  
-        <a>
-            <label for="numUser">Numero de contacto:</label>
-            <input type="text" id="numUser" name="user_num" placeholder="614-xxx-xxx">
-        </a>
-  
-        <a>
-            <input type="checkbox" id="angryPet" name="pet_angry" placeholder="angryness">
-            <label for="angryPet">¿El animal es agresivo?</label>
-        </a>
-  
-        <a>
-            <label for="photoPet">Suba una foto de su mascota para ayudar a los buscadores</label>
-            <input type="file" id="photoPet" name="pet_photo" >
-        </a>
-        
-      </div>
-    <input type="submit" value="Submit">
-  </form>
-</section>
+
+
+          <label for="trackPet">Ultima localizacion conocida:</label>
+          <input type="text" id="trackPet" name="pet_track"
+            placeholder="Col. Juarez, en la esquna de Chesse Pizza y Salida Cuahutemoc">
+
+
+
+          <label for="numUser">Numero de contacto:</label>
+          <input type="text" id="numUser" name="user_num" placeholder="614-xxx-xxx">
+
+
+
+          <input type="checkbox" id="angryPet" name="pet_angry" placeholder="angryness">
+          <label for="angryPet">¿El animal es agresivo?</label>
+
+
+
+          <label for="photoPet">Suba una foto de su mascota para ayudar a los buscadores</label>
+          <input type="file" id="photoPet" name="pet_photo">
+
+
+        <input type="submit" value="Submit" class="rounded-xl bg-green-500 p-2">
+      </form>
+    </section>

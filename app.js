@@ -1,15 +1,22 @@
 //requerimos el modulo de express
 const express = require('express'); 
 const path = require("path");
-const morgan = require('morgan');
-const connection = require('./server.js');
-
-//Modulacion de vistas ejs
 const engine = require('ejs-mate');
-app.engine('ejs', engine);
-app.set('views', path.join( __dirname + '/src/templates'));
+const flash = require('connect-flash');
+const session = require('express-session');
+const passport = require('passport');
+const morgan = require('morgan');
 
-//Archivos estaticos
+//Inicializacion
+const app = express();
+require('./dbconnection');
+require('./src/passport/local-auth');
+
+
+//Settings
+const port = 3000;
+app.set('views', path.join( __dirname + '/src/templates'));
+app.engine('ejs', engine);
 app.use(express.static(__dirname));
 
 

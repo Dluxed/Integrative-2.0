@@ -1,6 +1,8 @@
 const express = require('express');
 const router  = express.Router();
 const passport = require('passport');
+const Pet = require('../models/pets');
+
 
 //-----------   Redirecciones del servidor  -------------------
 router.get('/', (req, res) => {
@@ -35,9 +37,26 @@ router.get('/', (req, res) => {
     
   });
   
-  router.get('/request', isAuthenticated, (req, res) => {
-    res.render('SoliBusca.ejs');
+  router.get('/request',  isAuthenticated, (req, res) => {
+    res.render('request.ejs');
   });
+
+  router.post('/request', async (req, res) => {
+    const newPet = new Pet();
+    newPet.name = req.body.pet_name;
+    newPet.charactecteristics = req.body.pet_chara;
+    newPet.signals = req.body.pet_signals;
+    //newPet.lastLocation = 'coordenadas del mapa'
+    //newPet.numUser = 
+    if(req.body.pet_angry == 'on'){
+      newPet.aggressivness = true;
+    } else { newPet.aggressivness = false; 
+    //newPet.photo = //INSERTAR DIRECCION DE LA FOTO
+    }
+    await newPet.save(); 
+    console.log(req.body.pet_name);
+    res.send('Datos recibidos');
+  })
   
   router.get('/find', isAuthenticated, (req, res) => {
     res.render('map.ejs');
