@@ -58,7 +58,7 @@ router.get('/', (req, res) => {
     res.send('Datos recibidos');
   })
   
-  router.get('/find', isAuthenticated, (req, res) => {
+  router.get('/find', (req, res) => {
     res.render('map.ejs');
   });
   

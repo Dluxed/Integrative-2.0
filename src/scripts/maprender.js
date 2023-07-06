@@ -1,9 +1,15 @@
-window.onload = init;   
 
-function init(){
+//import { useGeographic } from '../../lib/v7.4.0-package/proj.js'
+ol.proj.useGeographic();
+//window.onload = init;   
+
+function init(lat, long){
+
+  const place = [long, lat];
+
   const map = new ol.Map({
     view: new ol.View({
-      center: [-11804502.080502147, 3332763.301556854],
+      center: place,
       zoom: 17
     }),
     layers: [
@@ -14,7 +20,13 @@ function init(){
     target: 'js-map'
   }) 
 
-  map.on('click', function(e){
-    console.log(e.coordinate);
+  map.on('click', function(data){
+    console.log(data);
+    console.log(data.coordinate[0]);
   })
+}
+
+function execute(){
+  navigator.geolocation.getCurrentPosition( (position) => { init(position.coords.latitude, position.coords.longitude); }, (err) => {console.log(error);});
+  
 }
