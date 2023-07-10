@@ -25,7 +25,8 @@
           <label for="trackPet">Ultima localizacion conocida:</label>
           <input type="text" id="trackPet" name="pet_track"
             placeholder="Col. Juarez, en la esquna de Chesse Pizza y Salida Cuahutemoc">
-
+          <script type="module" src="/src/scripts/maprender.js"></script>
+          <div id="js-map" class="h-32"></div>
 
 
           <label for="numUser">Numero de contacto:</label>
@@ -41,7 +42,13 @@
           <label for="photoPet">Suba una foto de su mascota para ayudar a los buscadores</label>
           <input type="file" id="photoPet" name="pet_photo">
 
+        	
+          
+        <button type="submit" class="rounded-xl bg-green-500 p-2">Submit</button>
 
-        <input type="submit" value="Submit" class="rounded-xl bg-green-500 p-2">
       </form>
     </section>
+
+<script type="module" src="/src/scripts/maprender.js"></script>
+<script type="module" src="/src/scripts/request.js"></script>
+<script src="/lib/v7.4.0-package/dist/ol.js"></script>

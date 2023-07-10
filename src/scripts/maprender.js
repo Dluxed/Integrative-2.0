@@ -28,5 +28,6 @@ function init(lat, long){
 
 function execute(){
   navigator.geolocation.getCurrentPosition( (position) => { init(position.coords.latitude, position.coords.longitude); }, (err) => {console.log(error);});
-  
+  document.getElementById("execBtn").className += " hidden";
+  //document.getElementById("execBtn").className.match(/(?:^|\s)MyClass(?!\S)/)
 }

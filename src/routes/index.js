@@ -36,8 +36,8 @@ router.get('/', (req, res) => {
     });
     
   });
-  
-  router.get('/request',  isAuthenticated, (req, res) => {
+  //isAuthenticated,     addthis to request login to access a page
+  router.get('/request', (req, res) => {
     res.render('request.ejs');
   });
 
