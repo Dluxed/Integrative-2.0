@@ -5,7 +5,7 @@
     <section class="min-h-screen flex justify-center"
       style="background-image: url('./src/images/jf-brou-915UJQaxtrk-unsplash.jpg'); background-size: cover;">
 
-      <form action="/request" method="post" class="h-fit mt-auto mb-auto flex flex-col bg-slate-100 rounded-lg drop-shadow-2xl p-2 space-y-1">
+      <form action="/request" method="post" class="h-fit mt-auto mb-auto flex flex-col bg-slate-100 rounded-lg drop-shadow-2xl p-2 space-y-4">
 
 
           <h1 class="text-2xl">Reporta tu mascota</h1>
@@ -14,34 +14,44 @@
           <input type="text" id="namePet" name="pet_name" placeholder="Timmy">
 
 
-          <label for="charaPet">Caracteristicas del animal:</label>
+          <label for="charaPet">Describa su apariencia lo mejor posible:</label>
           <input type="text" id="charaPet" name="pet_chara" placeholder="Perro blanco de 2 metros">
 
 
-          <label for="signalsPet">Señas particulares:</label>
+          <label for="signalsPet">¿Cuenta con algun distintivo característico?</label>
           <input type="text" id="signalsPet" name="pet_signals" placeholder="Tiene un dedo extra en la pata superior derecha">
 
 
           <label for="trackPet">Ultima localizacion conocida:</label>
           <input type="text" id="trackPet" name="pet_track"
             placeholder="Col. Juarez, en la esquna de Chesse Pizza y Salida Cuahutemoc">
-
+          <script type="module" src="/src/scripts/maprender.js"></script>
+          <div id="js-map" class="h-32"></div>
 
 
           <label for="numUser">Numero de contacto:</label>
           <input type="text" id="numUser" name="user_num" placeholder="614-xxx-xxx">
 
 
-
-          <input type="checkbox" id="angryPet" name="pet_angry" placeholder="angryness">
-          <label for="angryPet">¿El animal es agresivo?</label>
-
+          <p>¿Cuál es la personalidad del animal?</p>
+          <select name="pet_personality">
+            <option value="Agresivo">Agresivo</option>
+            <option value="Timido">Timido</option>
+            <option value="Nervioso">Nervioso</option>
+            <option value="Amigable">Amigable</option>
+            <option value="Revelde">Revelde</option>
+          </select>
 
 
           <label for="photoPet">Suba una foto de su mascota para ayudar a los buscadores</label>
           <input type="file" id="photoPet" name="pet_photo">
 
+          
 
         <input type="submit" value="Submit" class="rounded-xl bg-green-500 p-2">
       </form>
     </section>
+
+    <script type="module" src="/src/scripts/maprender.js"></script>
+    <script type="module" src="/src/scripts/request.js"></script>
+    <script src="/lib/v7.4.0-package/dist/ol.js"></script>

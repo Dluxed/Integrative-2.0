@@ -37,7 +37,7 @@ router.get('/', (req, res) => {
     
   });
   
-  router.get('/request',  isAuthenticated, (req, res) => {
+  router.get('/request', (req, res) => {
     res.render('request.ejs');
   });
 
@@ -45,14 +45,10 @@ router.get('/', (req, res) => {
     const newPet = new Pet();
     newPet.name = req.body.pet_name;
     newPet.charactecteristics = req.body.pet_chara;
-    newPet.signals = req.body.pet_signals;
+    newPet.specialsignals = req.body.pet_signals;
+    newPet.completed = false;
+    newPet.pet_personality = req.body.pet_personality;
     //newPet.lastLocation = 'coordenadas del mapa'
-    //newPet.numUser = 
-    if(req.body.pet_angry == 'on'){
-      newPet.aggressivness = true;
-    } else { newPet.aggressivness = false; 
-    //newPet.photo = //INSERTAR DIRECCION DE LA FOTO
-    }
     await newPet.save(); 
     console.log(req.body.pet_name);
     res.send('Datos recibidos');
