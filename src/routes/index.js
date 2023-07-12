@@ -47,7 +47,7 @@ router.get('/', (req, res) => {
     newPet.charactecteristics = req.body.pet_chara;
     newPet.specialsignals = req.body.pet_signals;
     newPet.completed = false;
-    newPet.pet_personality = req.body.pet_personality;
+    newPet.personality = req.body.pet_personality;
     //newPet.lastLocation = 'coordenadas del mapa'
     await newPet.save(); 
     console.log(req.body.pet_name);
