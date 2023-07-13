@@ -1,3 +1,5 @@
+window.onload = execute;
+
 function init(lat, lon) {
 
   const place = [lat, lon];
@@ -18,10 +20,12 @@ function init(lat, lon) {
   }).addTo(map);
 
   var marker = L.marker(place).addTo(map);
+
+  marker.bindPopup("<b>Wenas!</b>").openPopup();
 }
 
-function execute() {
-  navigator.geolocation.getCurrentPosition((position) => { init(position.coords.latitude, position.coords.longitude); }, (err) => { console.log(error); });
-  document.getElementById("execBtn").className += " hidden";
+async function execute() {
+  await navigator.geolocation.getCurrentPosition((position) => { init(position.coords.latitude, position.coords.longitude); }, (err) => { console.log(error); });
+  //document.getElementById("execBtn").className += " hidden";
   //document.getElementById("execBtn").className.match(/(?:^|\s)MyClass(?!\S)/)
 }
