@@ -2,35 +2,47 @@
 
   <%- include('navbar') %>
 
-    <section class="min-h-screen flex justify-center"
+    <section class="min-h-screen flex"
       style="background-image: url('./src/images/jf-brou-915UJQaxtrk-unsplash.jpg'); background-size: cover;">
 
-      <form action="/request" method="post" class="h-fit mt-auto mb-auto flex flex-col bg-slate-100 rounded-lg drop-shadow-2xl p-2 space-y-4">
+      <form action="/request" method="post" enctype="multipart/form-data" class="flex flex-col h-fit w-2/3 my-4 ml-4  bg-slate-100 rounded-lg drop-shadow-2xl p-8 space-y-4">
 
 
-          <h1 class="text-2xl">Reporta tu mascota</h1>
+          <h1 class="text-2xl">Crea un reporte para tu mascota perdida</h1>
+
+          <p>Seleciona una especie:</p>
+          <label>
+            <input type="radio" name="specie" value="perro"> Perro
+          </label>
+          <label>
+            <input type="radio" name="specie" value="gato"> Gato
+          </label>
 
           <label for="namePet">Nombre de la mascota:</label><br>
           <input type="text" id="namePet" name="pet_name" placeholder="Timmy">
 
 
           <label for="charaPet">Describa su apariencia lo mejor posible:</label>
-          <input type="text" id="charaPet" name="pet_chara" placeholder="Perro blanco de 2 metros">
+          <label>Color:</label>
+          <input type="text" id="colorPet" name="pet_color" placeholder="marron">
+          <label for="charaPet">Peculiaridades</label>
+          <input type="text" id="charaPet" name="pet_chara" placeholder="Mancha blanca en el pecho">
 
 
-          <label for="signalsPet">¿Cuenta con algun distintivo característico?</label>
-          <input type="text" id="signalsPet" name="pet_signals" placeholder="Tiene un dedo extra en la pata superior derecha">
+          <label for="signalsPet">¿Cuenta con algun accesorio?</label>
+          <input type="text" id="signalsPet" name="pet_signals" placeholder="Collar azul">
 
 
-          <label for="trackPet">Ultima localizacion conocida:</label>
-          <input type="text" id="trackPet" name="pet_track"
-            placeholder="Col. Juarez, en la esquna de Chesse Pizza y Salida Cuahutemoc">
-          <script type="module" src="/src/scripts/maprender.js"></script>
-          <div id="js-map" class="h-32"></div>
+          <label for="trackPet">Seleccione ssu ultima localizacion conocida:</label>
+          
+          <div class="w-full h-64">
+            <div id="js-map" class="map"></div>
+          </div>
+          <input type="text" id="lat" name="pet_lat" value="" readonly>
+          <input type="text" id="lng" name="pet_lng" value="" readonly>
 
-
-          <label for="numUser">Numero de contacto:</label>
-          <input type="text" id="numUser" name="user_num" placeholder="614-xxx-xxx">
+          <label for="photoPet">Suba una foto de su mascota</label>
+          <input type="file" id="photoPet" name="pet_photo">
 
 
           <label for="personalityPet">¿Cuál es la personalidad del animal?</label>
@@ -43,15 +55,12 @@
           </select>
 
 
-          <label for="photoPet">Suba una foto de su mascota para ayudar a los buscadores</label>
-          <input type="file" id="photoPet" name="pet_photo">
-
-          
-
         <input type="submit" value="Submit" class="rounded-xl bg-green-500 p-2">
       </form>
     </section>
 
-    <script type="module" src="/src/scripts/maprender.js"></script>
-    <script type="module" src="/src/scripts/request.js"></script>
-    <script src="/lib/v7.4.0-package/dist/ol.js"></script>
+    <script src="src/scripts/maprender.js"></script>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>

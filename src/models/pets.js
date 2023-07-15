@@ -3,9 +3,10 @@ const { checkout } = require('../routes');
 
 const petSchema = new mongoose.Schema({
     name: String,
+    specie: String,
     characteristics: String,
     specialsignals: String,
-    lastLocation: [{ x: Number, y: Number }],
+    lastLocation: [{ lat: Number, lng: Number }],
     numUser: Number,
     proced: Boolean,
     photo: String,

@@ -6,6 +6,8 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 const morgan = require('morgan');
+const fuleUpload = require('express-fileupload');
+const fileUpload = require('express-fileupload');
 
 //Inicializacion
 const app = express();
@@ -25,6 +27,11 @@ app.use(morgan('dev'));  //muestra datos de las peticiones del servidor
 //Desmadre de POST
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(fileUpload( {
+  limits: {fileSize: 10000000},
+  abortOnLimit: true,
+} ));
+
 //Opciones, no se que hacen, no mover :3
 app.use(session({
   secret: 'SuicideZanero', //Clave adicional de seguridad

@@ -2,7 +2,7 @@ const express = require('express');
 const router  = express.Router();
 const passport = require('passport');
 const Pet = require('../models/pets');
-
+const fileUpload = require('express-fileupload');
 
 //-----------   Redirecciones del servidor  -------------------
 router.get('/', (req, res) => {
@@ -43,14 +43,23 @@ router.get('/', (req, res) => {
 
   router.post('/request', async (req, res) => {
     const newPet = new Pet();
+    newPet.specie = req.body.specie;
     newPet.name = req.body.pet_name;
     newPet.charactecteristics = req.body.pet_chara;
     newPet.specialsignals = req.body.pet_signals;
     newPet.completed = false;
     newPet.personality = req.body.pet_personality;
-    //newPet.lastLocation = 'coordenadas del mapa'
+    newPet.lastLocation.lat = req.body.pet_lat;
+    newPet.lastLocation.lng = req.body.pet_lng;
     await newPet.save(); 
-    console.log(req.body.pet_name);
+    console.log(req.body);
+    
+    const { pet_photo } = req.files;
+    if (!pet_photo) return res.sendStatus(400);
+
+    pet_photo.mv(__dirname + '/../upload/petPhotos/' + pet_photo.name);
+    if (/^pet_photo/.test(pet_photo.mimetype)) return res.sendStatus(400);
+    
     res.send('Datos recibidos');
   })
   
