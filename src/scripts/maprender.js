@@ -20,22 +20,15 @@ function init(lat, lon) {
 
 }
 
+
 function onMapClick(e){
-    
-  document.getElementById("lat").vlaue = e.latlng.lat;
-
-  console.log( typeof(document.getElementById("lat").vlaue));
-
-  console.log(document.getElementById("lat").vlaue);
-
-  document.getElementById("lng").vlaue = e.latlng.lng.toString();
-  console.log(document.getElementById("lng").vlaue);
-
+  
+  document.getElementById("holder").innerHTML = "<input type='text' id='lat' name='pet_lat' value='" + e.latlng.lat + "' readonly>";
+  document.getElementById("holder").innerHTML += "<input type='text' id='lng' name='pet_lng' value='" + e.latlng.lng + "' readonly>";
 
 }
 
 async function execute() {
   await navigator.geolocation.getCurrentPosition( (position) => { init(position.coords.latitude, position.coords.longitude); }, (err) => { console.log(error); });
-  //document.getElementById("execBtn").className += " hidden";
-  //document.getElementById("execBtn").className.match(/(?:^|\s)MyClass(?!\S)/)
+  
 }
