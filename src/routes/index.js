@@ -33,9 +33,13 @@ router.get('/', (req, res) => {
     req.logout(function (err){
       if(err) { return next(err); }
       res.redirect('/');
-    });
-    
+    });  
   });
+
+  router.get('/profile', (req, res) => {
+    res.render('profile.ejs');
+  });
+
   
   router.get('/request', (req, res) => {
     res.render('request.ejs');
