@@ -14,7 +14,6 @@ function initMap() {
 
 }
 
-
 function codeAddress() {
     var address  = document.getElementById('address').value;
     geocoder.geocode( { 'address': address }, function(results, status ) {

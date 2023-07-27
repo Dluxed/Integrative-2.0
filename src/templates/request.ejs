@@ -35,16 +35,17 @@
 
           <label for="trackPet" class="text-lg font-semibold">Seleccione ssu ultima localizacion conocida:</label>
           
+          <div>
+            <input id="address" type="textbox" placeholder="SuperMarket, SomeStreet" class="text-2xl">
+            <input type="button" value="Buscar" onclick="codeAddress()" class="bg-green-400 py-1 px-4 rounded-full">
+          </div>
           <div class="w-full h-64">
-            <div id="js-map" class="map"></div>
+            <div id="map" class="map"></div>
           </div>
 
-          <div id="holder">
-            <input type="text" id="lat" name="pet_lat" value="" readonly>
-            <input type="text" id="lng" name="pet_lng" value="" readonly>
-          </div>
+         
           
-          <label for="photoPet">Suba una foto de su mascota</label>
+          <label for="photoPet" class="font-semibold">Agruegue una foto de su mascota</label>
           <input type="file" id="photoPet" name="pet_photo">
 
 
@@ -62,8 +63,9 @@
       </form>
     </section>
 
-    <script src="src/scripts/maprender.js"></script>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVRLdLFSX0iI7vzH6IR3CZyR4Mzfg_Er0
+&libraries=places&callback=initMap"> 
+</script>
+
+<script src="src/scripts/request.js"></script>

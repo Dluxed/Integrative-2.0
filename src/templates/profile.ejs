@@ -4,11 +4,31 @@
 
 
 <section class="h-full p-8">
-    <div class="bg-slate-200 p-8 flex">
-        <h1 class="text-4xl w-full">Wenas noches Que tal le va? uwu</h1>
-        <img src="src/images/RandomHusky.jpg" alt="" class="h-64 w-64">
+    <div class="bg-slate-200 p-8 flex-col">
+        <div class="flex">
+            <h1 class="text-4xl w-full">Wenas noches Que tal le va? uwu</h1>
+            <img src="src/images/RandomHusky.jpg" alt="" class="h-64 w-64">
+        </div>
+
+        <div class="h-96 w-full">
+            <div id="map"></div>
+            <div>
+                <input id="address" type="textbox" value="Sydney, NSW">
+                <input type="button" value="Encode" onclick="codeAddress()">
+              </div>
+        </div>
         
     </div>
+
+
 </section>
 
 Hola ester es el perfil
+
+
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVRLdLFSX0iI7vzH6IR3CZyR4Mzfg_Er0
+&libraries=places&callback=initMap"> 
+</script>
+
+<script src="src/scripts/googlemaprender.js"></script>
+
