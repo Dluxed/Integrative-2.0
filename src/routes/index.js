@@ -3,6 +3,7 @@ const router  = express.Router();
 const passport = require('passport');
 const Pet = require('../models/pets');
 const fileUpload = require('express-fileupload');
+//const Loader = require("@googlemaps/js-api-loader");
 
 //-----------   Redirecciones del servidor  -------------------
 router.get('/', (req, res) => {
@@ -37,13 +38,14 @@ router.get('/', (req, res) => {
   });
 
   router.get('/profile', (req, res) => {
-    res.render('profile.ejs');
+    res.render('profile.ejs', { apiKey: process.env.APIKEY });
   });
 
   
   router.get('/request', (req, res) => {
-    res.render('request.ejs');
+    res.render('request.ejs', { apiKey: process.env.APIKEY });
   });
+
 
   router.post('/request', async (req, res) => {
     const newPet = new Pet();
