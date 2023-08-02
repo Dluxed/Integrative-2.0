@@ -22,15 +22,17 @@
           <input type="text" id="namePet" name="pet_name" placeholder="Timmy">
 
 
-          <label for="charaPet" class="text-lg font-semibold">Describa su apariencia lo mejor posible:</label>
+          <label class="text-lg font-semibold">Describa su apariencia lo mejor posible:</label>
+          
           <label class="text-lg font-semibold">Color:</label>
           <input type="text" id="colorPet" name="pet_color" placeholder="marron">
+          
           <label for="charaPet" class="text-lg font-semibold">Peculiaridades</label>
           <input type="text" id="charaPet" name="pet_chara" placeholder="Mancha blanca en el pecho">
 
 
-          <label for="signalsPet" class="text-lg font-semibold">¿Cuenta con algun accesorio?</label>
-          <input type="text" id="signalsPet" name="pet_signals" placeholder="Collar azul">
+          <label for="accesoriesPet" class="text-lg font-semibold">¿Cuenta con algun accesorio?</label>
+          <input type="text" id="accesoriesPet" name="pet_accesories" placeholder="Collar azul">
 
 
           <label for="trackPet" class="text-lg font-semibold">Seleccione ssu ultima localizacion conocida:</label>
@@ -43,7 +45,10 @@
             <div id="map" class="map"></div>
           </div>
 
-         
+
+              <input id="lat" name="pet_lat" type="text" class="hidden">
+              <input id="lng" name="pet_lng" type="text" class="hidden">
+              
           
           <label for="photoPet" class="font-semibold">Agruegue una foto de su mascota</label>
           <input type="file" id="photoPet" name="pet_photo">
