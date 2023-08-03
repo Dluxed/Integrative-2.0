@@ -7,8 +7,4 @@ function pwdValidate () {
         return false;
 
     }
-
-    
-    
-
 }

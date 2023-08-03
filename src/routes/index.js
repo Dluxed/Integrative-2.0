@@ -71,8 +71,11 @@ router.get('/', (req, res) => {
     res.send('Datos recibidos');
   })
   
+  
   router.get('/find', (req, res) => {
-    res.render('map.ejs');
+    const pet = Pet.findById("64cb0128351b6950a2818132");
+    console.log(pet.name);
+    res.render('map.ejs', { apiKey: process.env.APIKEY, pet });
   });
   
   function isAuthenticated (req, res, next) {

@@ -6,7 +6,7 @@ function initMap() {
     //var place = { lat: 28.6140224, lng: -106.125015 };
 
     var mapOptions = {
-        zoom: 8,
+        zoom: 15,
         center: latlng
     }
 
@@ -14,6 +14,8 @@ function initMap() {
 
 }
 
+//document.getElementById("reports").innerHTML = 
+/*
 function codeAddress() {
     var address  = document.getElementById('address').value;
     geocoder.geocode( { 'address': address }, function(results, status ) {
@@ -28,3 +30,4 @@ function codeAddress() {
         }
     } );
 }
+*/
