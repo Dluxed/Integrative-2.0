@@ -10,6 +10,10 @@ router.get('/', (req, res) => {
     res.render('home.ejs');
   });
   
+  router.get('/track', (req, res) => {
+    res.render('track.ejs', { apiKey: process.env.APIKEY });
+  });
+
   router.get('/log', (req, res) => {
     res.render('login.ejs');
   });
