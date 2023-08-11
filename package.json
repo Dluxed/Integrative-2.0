@@ -4,7 +4,6 @@
     "description": "El repositorio de integrador",
     "main": "app.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
         "css": "npx tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css --watch",
         "start": "node app.js",
         "dev": "nodemon app.js"
