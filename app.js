@@ -16,8 +16,8 @@ require('./src/passport/local-auth');
 
 
 //Settings
-const port = 3000;
-app.set('views', path.join( process.cwd(), '/src/templates'));
+const port = process.env.PORT || 3000;
+app.set('views', path.join( __dirname + '/src/templates'));
 app.engine('ejs', engine);
 app.use(express.static(__dirname));
 
