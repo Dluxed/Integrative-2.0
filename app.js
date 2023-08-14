@@ -7,7 +7,6 @@ const session = require('express-session');
 const passport = require('passport');
 const morgan = require('morgan');
 const fuleUpload = require('express-fileupload');
-const fileUpload = require('express-fileupload');
 
 //Inicializacion
 const app = express();
